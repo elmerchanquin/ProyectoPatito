@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Facturacion" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="064d9672-b2a8-4ab4-8a46-8d5259266b1e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Cliente" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     clientes.`nombre` AS clientes_nombre,
+     clientes.`NIT` AS clientes_NIT,
+     facturacion.`numero` AS facturacion_numero,
+     facturacion.`monto` AS facturacion_monto,
+     facturacion.`fecha` AS facturacion_fecha,
+     servicios.`nombre` AS servicios_nombre,
+     clientes.`codigo` AS clientes_codigo
+FROM
+     `clientes` clientes INNER JOIN `facturacion` facturacion ON clientes.`codigo` = facturacion.`codigocliente`
+     INNER JOIN `servicios` servicios ON clientes.`servicio` = servicios.`codigo`
+     AND servicios.`codigo` = facturacion.`codigoservicio`
+WHERE clientes.codigo = $P!{Cliente}]]>
+	</queryString>
+	<field name="clientes_nombre" class="java.lang.String"/>
+	<field name="clientes_NIT" class="java.lang.Integer"/>
+	<field name="facturacion_numero" class="java.lang.Integer"/>
+	<field name="facturacion_monto" class="java.math.BigDecimal"/>
+	<field name="facturacion_fecha" class="java.sql.Date"/>
+	<field name="servicios_nombre" class="java.lang.String"/>
+	<field name="clientes_codigo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement x="143" y="0" width="490" height="47" uuid="a17a6782-10b6-4e32-b562-37aacff06cf9"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Facturación Cablenet Patito]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="652" y="0" width="100" height="20" uuid="b574cad7-cf80-4a7b-b618-3de3713df3e6"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="143" height="77" uuid="ea03cf0f-6ae0-4eba-a662-1ba32e761867"/>
+				<imageExpression><![CDATA["C:\\Users\\Java2018\\Documents\\NetBeansProjects\\ProyectoPatito\\src\\imagenes\\prueba.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="115" height="20" uuid="26304432-3eb1-47aa-a83b-6def45bca126"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código de Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="1" width="50" height="20" uuid="71ae4696-af03-460b-8e3c-a6329ee5532a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="0" width="100" height="20" uuid="c99f08e7-8746-4e10-aad0-8616ac252ffc"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIT de Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="0" width="100" height="20" uuid="c4c3efbc-78bf-4e4a-8902-357f0b09af20"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. de Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="548" y="1" width="39" height="20" uuid="189ff4d1-5c5f-4501-848c-18f2b0104992"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="633" y="0" width="132" height="20" uuid="df1d3dd3-79d6-49f2-ad83-a4fbd0d2b282"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Facturación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="0" width="115" height="20" uuid="acc3d31e-4c8a-4485-82d4-92afc0d8c359"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Servicio del Cliente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="118" y="0" width="100" height="20" uuid="f8c139df-4975-40f2-946b-1068dc470f2a"/>
+				<textFieldExpression><![CDATA[$F{clientes_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="0" width="100" height="20" uuid="b808df9b-3b3a-4515-b6a7-76b92a9b5f0f"/>
+				<textFieldExpression><![CDATA[$F{clientes_NIT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="354" y="0" width="100" height="20" uuid="d3a22163-e066-4d32-b5d7-1cb72fa28b67"/>
+				<textFieldExpression><![CDATA[$F{facturacion_numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="0" width="100" height="20" uuid="fe80e9c9-fcb7-4973-b0e2-58e539653eec"/>
+				<textFieldExpression><![CDATA[$F{servicios_nombre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="648" y="0" width="100" height="20" uuid="aa5a9fe8-462b-424b-86b6-9cbff8fc0c5f"/>
+				<textFieldExpression><![CDATA[$F{facturacion_fecha}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="551" y="0" width="62" height="20" uuid="41a54b45-b9b2-4f2c-a525-bb7768aa8f97"/>
+				<textFieldExpression><![CDATA[$F{facturacion_monto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="33" y="0" width="27" height="20" uuid="c87e316b-9d57-4126-9965-986751f5389b"/>
+				<textFieldExpression><![CDATA[$F{clientes_codigo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="274" y="0" width="80" height="20" uuid="4e584d4f-413e-47eb-b0d9-decdbf274910"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="354" y="0" width="40" height="20" uuid="2da84772-8513-421c-82aa-a9b3dc5f2214"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

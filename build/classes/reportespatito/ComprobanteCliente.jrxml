@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="396" orientation="Landscape" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="acc331e1-a6fd-4c62-aefc-e2c4b14c4d5f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<subDataset name="dataset1" uuid="0bd45039-39f6-457b-a25f-e03a22e47bd4"/>
+	<subDataset name="Table Dataset 1" uuid="f71ec76b-ef71-4256-8220-0158474d5fbd"/>
+	<parameter name="documento" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     clientes.`codigo` AS clientes_codigo,
+     clientes.`nombre` AS clientes_nombre,
+     clientes.`NIT` AS clientes_NIT,
+     facturacion.`numero` AS facturacion_numero,
+     facturacion.`monto` AS facturacion_monto,
+     facturacion.`fecha` AS facturacion_fecha,
+     servicios.`nombre` AS servicios_nombre
+FROM
+     `clientes` clientes INNER JOIN `facturacion` facturacion ON clientes.`codigo` = facturacion.`codigocliente`
+     INNER JOIN `servicios` servicios ON clientes.`servicio` = servicios.`codigo`
+     AND servicios.`codigo` = facturacion.`codigoservicio`
+WHERE
+     facturacion.numero = $P!{documento}]]>
+	</queryString>
+	<field name="clientes_codigo" class="java.lang.Integer"/>
+	<field name="clientes_nombre" class="java.lang.String"/>
+	<field name="clientes_NIT" class="java.lang.Integer"/>
+	<field name="facturacion_numero" class="java.lang.Integer"/>
+	<field name="facturacion_monto" class="java.math.BigDecimal"/>
+	<field name="facturacion_fecha" class="java.sql.Date"/>
+	<field name="servicios_nombre" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="130" splitType="Stretch">
+			<textField>
+				<reportElement x="471" y="68" width="52" height="20" uuid="f6a13a03-c7a5-4ca9-82b2-2f4ddecd133f"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{facturacion_numero}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="116" y="0" width="314" height="37" uuid="c407f662-9ddd-4cf5-a1e0-33f38ec71035"/>
+				<textElement>
+					<font fontName="Arial" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura del Cliente Patito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="48" width="112" height="20" uuid="eb985e50-344c-4dd2-8079-eacd2f5976d8"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. de Factura]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="3" width="116" height="85" uuid="50a672f7-cef3-4b30-868a-984bccf8e466"/>
+				<imageExpression><![CDATA["C:\\Users\\Java2018\\Documents\\NetBeansProjects\\ProyectoPatito\\src\\imagenes\\prueba.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="155" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="130" height="20" uuid="3e999a57-474f-4349-a118-7788c1a48d39"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código del Cliente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="43" y="20" width="57" height="20" uuid="5460584a-4c81-4072-8af7-5e0fa17f3de9"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_codigo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="158" y="0" width="100" height="20" uuid="3603a40b-df51-4d89-80e6-fa3189b1acc5"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="20" width="100" height="20" uuid="21c2a57b-fd9b-4a2f-bc38-64b1e49d5947"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="289" y="0" width="100" height="20" uuid="463a2b74-26ee-4c91-bb2c-7fa28ba0101b"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="289" y="20" width="100" height="20" uuid="e9b7d749-8f3a-42bd-b5b3-6f82fa7303c2"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_NIT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="455" y="102" width="112" height="20" uuid="527c54a4-6673-4ac3-b334-8d887099f7f6"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto Pagado]]></text>
+			</staticText>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="472" y="122" width="100" height="20" uuid="60932810-3689-4255-aa4a-6eba4710608f"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{facturacion_monto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="227" y="102" width="144" height="20" uuid="8c4f2fb5-afbd-4d16-94aa-fa0f42714fd1"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Servicio Contratado]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="227" y="122" width="162" height="20" uuid="5aa2133c-fa71-4e82-a70b-a194a7f52c8b"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servicios_nombre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="20" width="100" height="20" uuid="dd317084-c944-465c-9419-d87a4e6a2eba"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{facturacion_fecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="443" y="0" width="112" height="20" uuid="6b2930b2-b9ba-45ea-83e8-2af9f6e51cba"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Pago]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="0" width="347" height="34" uuid="be72af92-c4b2-49e4-bb4a-8a66ba397d62"/>
+				<textElement>
+					<font fontName="Arial" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[¡¡Gracias por su pago a tiempo!!!]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
