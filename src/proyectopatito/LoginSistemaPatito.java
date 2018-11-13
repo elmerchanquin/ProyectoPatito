@@ -173,8 +173,12 @@ public class LoginSistemaPatito extends javax.swing.JFrame {
             }
 
             if (nivel==1){
-                JOptionPane.showMessageDialog(null, "Bienvenido Supervisor de Sistema");
-            
+                //Dar la bienvenida al usuario
+                JOptionPane.showMessageDialog(null, "Bienvenido Supervisor del Sistema Patito");
+                //Desplegar el menu respectivo al nivel de usuario
+                MenuSupervisor menu = new MenuSupervisor();
+                menu.setVisible(true);
+                this.dispose();
             }else if (nivel==2){
                 //Dar la bienvenida al usuario
                 JOptionPane.showMessageDialog(null, "Bienvenido Administrador");
