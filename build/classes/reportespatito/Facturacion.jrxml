@@ -145,7 +145,7 @@ WHERE clientes.codigo = $P!{Cliente}]]>
 		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="21" splitType="Stretch">
+		<band height="292" splitType="Stretch">
 			<textField>
 				<reportElement x="274" y="0" width="80" height="20" uuid="4e584d4f-413e-47eb-b0d9-decdbf274910"/>
 				<textElement textAlignment="Right"/>
