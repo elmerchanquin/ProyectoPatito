@@ -78,8 +78,6 @@ public class MenuSupervisor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaPatito = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         txtPas = new javax.swing.JTextField();
@@ -89,11 +87,8 @@ public class MenuSupervisor extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         btnConsultar = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         txtUsu = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         txtNivel = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         opc1 = new javax.swing.JRadioButton();
@@ -102,19 +97,15 @@ public class MenuSupervisor extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         btnRefrescar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU DEL SUPERVISOR PATITO");
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         etiFiltro.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanel1.add(etiFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(366, 40, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel3.setText("EN EL CUADRO DE ABAJO SE MUESTRAN LOS USUARIOS AUTORIZADOS");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 9, -1, -1));
 
         btnSalir.setBackground(new java.awt.Color(255, 0, 51));
         btnSalir.setText("CERRAR SESIÓN");
@@ -124,7 +115,6 @@ public class MenuSupervisor extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 11, -1, -1));
 
         TablaPatito.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,35 +127,25 @@ public class MenuSupervisor extends javax.swing.JFrame {
         TablaPatito.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TablaPatito);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 46, 506, 75));
-
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel1.setText("AGREGAR NUEVO USUARIO");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 159, -1, -1));
-
-        jLabel4.setText("NOMBRE DE USUSARIO");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 184, -1, -1));
-
-        jLabel5.setText("PASSWORD");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 233, -1, -1));
 
         jLabel6.setText("NIVEL");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 282, -1, -1));
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 204, 158, -1));
 
+        txtUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("USUARIO"));
+
+        txtPas.setBorder(javax.swing.BorderFactory.createTitledBorder("CONTRASEÑA"));
         txtPas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPas, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 282, 158, -1));
 
         NIVELES.add(opcUno);
         opcUno.setText("(1) SUPERVISOR");
-        jPanel1.add(opcUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 298, -1, -1));
 
         NIVELES.add(opcDos);
         opcDos.setText("(2) ADMINISTRADOR");
-        jPanel1.add(opcDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 321, -1, -1));
 
         NIVELES.add(opcTres);
         opcTres.setText("(3) ASISTENTE");
@@ -174,11 +154,11 @@ public class MenuSupervisor extends javax.swing.JFrame {
                 opcTresActionPerformed(evt);
             }
         });
-        jPanel1.add(opcTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 344, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         jLabel2.setText("ACTUALIZAR O BORRAR USUARIO");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 139, -1, -1));
-        jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 176, 38, -1));
+
+        txtId.setBorder(javax.swing.BorderFactory.createTitledBorder("ID USUARIO"));
 
         btnConsultar.setText("CONSULTAR");
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
@@ -186,39 +166,28 @@ public class MenuSupervisor extends javax.swing.JFrame {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 175, -1, -1));
 
-        jLabel7.setText("NOMBRE DE USUSARIO");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 207, -1, -1));
-        jPanel1.add(txtUsu, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 230, 158, -1));
+        txtUsu.setBorder(javax.swing.BorderFactory.createTitledBorder("USUARIO"));
 
-        jLabel8.setText("PASSWORD");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 259, -1, -1));
-
+        txtPassword.setBorder(javax.swing.BorderFactory.createTitledBorder("CONTRASEÑA"));
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 256, 158, -1));
-
-        jLabel9.setText("NIVEL ACTUAL");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 308, -1, -1));
 
         txtNivel.setEditable(false);
+        txtNivel.setBorder(javax.swing.BorderFactory.createTitledBorder("NIVEL ACTUAL"));
         txtNivel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNivelActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 328, 50, -1));
 
         jLabel10.setText("ACTUALIZAR NIVEL");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 359, -1, -1));
 
         NIVELES2.add(opc1);
         opc1.setText("(1) SUPERVISOR");
-        jPanel1.add(opc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 375, -1, -1));
 
         NIVELES2.add(opc2);
         opc2.setText("(2) ADMINISTRADOR");
@@ -227,11 +196,9 @@ public class MenuSupervisor extends javax.swing.JFrame {
                 opc2ActionPerformed(evt);
             }
         });
-        jPanel1.add(opc2, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 398, -1, -1));
 
         NIVELES2.add(opc3);
         opc3.setText("(3) ASISTENTE");
-        jPanel1.add(opc3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 421, -1, -1));
 
         btnAgregar.setText("AGREGAR USUARIO");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -239,7 +206,6 @@ public class MenuSupervisor extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 385, -1, -1));
 
         btnActualizar.setText("ACTUALIZAR USUARIO");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -247,7 +213,6 @@ public class MenuSupervisor extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 451, -1, -1));
 
         btnBorrar.setText("BORRAR USUARIO");
         btnBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -255,10 +220,6 @@ public class MenuSupervisor extends javax.swing.JFrame {
                 btnBorrarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 451, -1, -1));
-
-        jLabel11.setText("INGRESE EL ID DE USUARIO");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 159, 158, -1));
 
         btnRefrescar.setText("REFRESCAR DATOS");
         btnRefrescar.addActionListener(new java.awt.event.ActionListener() {
@@ -266,13 +227,130 @@ public class MenuSupervisor extends javax.swing.JFrame {
                 btnRefrescarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRefrescar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2)
+                        .addComponent(txtUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPas, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAgregar, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel10)
+                            .addGap(31, 31, 31)
+                            .addComponent(opc1)
+                            .addGap(18, 18, 18)
+                            .addComponent(opc2)
+                            .addGap(18, 18, 18)
+                            .addComponent(opc3))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(163, 163, 163)
+                            .addComponent(btnActualizar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBorrar)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(91, 91, 91)
+                        .addComponent(btnConsultar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(29, 29, 29)
+                        .addComponent(opcUno)
+                        .addGap(18, 18, 18)
+                        .addComponent(opcDos)
+                        .addGap(18, 18, 18)
+                        .addComponent(opcTres))
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(354, 354, 354)
+                        .addComponent(etiFiltro)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnRefrescar)
+                        .addGap(193, 193, 193)
+                        .addComponent(btnSalir))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(etiFiltro)
+                        .addGap(131, 131, 131)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(opcUno)
+                            .addComponent(opcDos)
+                            .addComponent(opcTres))
+                        .addGap(26, 26, 26)
+                        .addComponent(btnAgregar)
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnConsultar))
+                        .addGap(18, 18, 18)
+                        .addComponent(txtUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtPas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(opc1)
+                            .addComponent(opc2)
+                            .addComponent(opc3))
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnActualizar)
+                            .addComponent(btnBorrar))
+                        .addGap(20, 20, 20))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnRefrescar)
+                                    .addComponent(btnSalir))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(131, 131, 131))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,77 +360,132 @@ public class MenuSupervisor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        LoginSistemaPatito login = new LoginSistemaPatito();
-        login.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnSalirActionPerformed
+    private void btnRefrescarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefrescarActionPerformed
 
-    private void txtPasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasActionPerformed
+        coincidencia("");
+    }//GEN-LAST:event_btnRefrescarActionPerformed
 
-    private void opcTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcTresActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcTresActionPerformed
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
 
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
+        try{
+            Conectar conectar = new Conectar();
+            Connection conexionPatito = conectar.conexion();
+            String sql="";
+            sql = "delete from usuarios where id=?";
 
-    private void txtNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNivelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNivelActionPerformed
+            PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);
+            statementPatito.setInt(1, Integer.parseInt(txtId.getText()));
+
+            int opcion = statementPatito.executeUpdate();
+            if (opcion > 0){
+                JOptionPane.showMessageDialog(null,"El registro del usuario SE BORRO de la Base de Datos");
+            }else{
+                JOptionPane.showMessageDialog(null,"Registro NO BORRADO - por favor revise");
+            }
+
+            conexionPatito.close();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+
+        int paraNivel=0;
+        if (opc1.isSelected()){
+            paraNivel = 1;
+        }else if(opc2.isSelected()){
+            paraNivel = 2;
+        }else if(opc3.isSelected()){
+            paraNivel = 3;
+        }
+        try{
+            Conectar conectar = new Conectar();
+            Connection conexionPatito = conectar.conexion();
+            String sql="";
+            sql = "update usuarios SET  usuario=?, password=?, nivel=? WHERE id=?";
+
+            PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);
+            statementPatito.setString(1, txtUsu.getText());
+            statementPatito.setString(2, txtPas.getText());
+            statementPatito.setInt(3, paraNivel);
+            statementPatito.setString(4, txtId.getText());
+
+            int respuesta = statementPatito.executeUpdate();
+
+            if (respuesta>0){
+                JOptionPane.showMessageDialog(null,"Registro ACTUALIZADO");
+            }else{
+                JOptionPane.showMessageDialog(null,"NO se pudo actualizar el registro");
+            }
+
+            conexionPatito.close();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+        txtUsu.setText("");
+        txtPas.setText("");
+        txtNivel.setText("");
+        NIVELES2.clearSelection();
+
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        try{
+            Conectar conectar = new Conectar();
+            Connection conexionPatito = conectar.conexion();
+
+            String paraUsuario;
+            String paraPassword;
+            int paraNivel=0;
+            String sql = "";
+
+            paraUsuario = txtUsuario.getText();
+            paraPassword = txtPassword.getText();
+
+            if (opcUno.isSelected()){
+                paraNivel = 1;
+            }else if(opcDos.isSelected()){
+                paraNivel = 2;
+            }else if(opcTres.isSelected()){
+                paraNivel = 3;
+            }
+            sql = "insert into usuarios (usuario, password, nivel) values (?, ?, ?)";
+
+            PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);
+            statementPatito.setString(1, paraUsuario);
+            statementPatito.setString(2, paraPassword);
+            statementPatito.setInt(3, paraNivel);
+
+            int p = statementPatito.executeUpdate();
+            if (p > 0){
+                JOptionPane.showMessageDialog(null, "El Registro de Usuario fue Guardado");
+
+                conexionPatito.close();
+
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+        txtUsuario.setText("");
+        txtPassword.setText("");
+        NIVELES.clearSelection();
+
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void opc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opc2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_opc2ActionPerformed
 
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-try{
-    Conectar conectar = new Conectar();
-    Connection conexionPatito = conectar.conexion();
-    
-    String paraUsuario;
-    String paraPassword;
-    int paraNivel=0;
-    String sql = "";
-    
-    paraUsuario = txtUsuario.getText();
-    paraPassword = txtPassword.getText();
-    
-    if (opcUno.isSelected()){
-        paraNivel = 1;
-    }else if(opcDos.isSelected()){
-        paraNivel = 2;   
-    }else if(opcTres.isSelected()){
-       paraNivel = 3;
-    }
-    sql = "insert into usuarios (usuario, password, nivel) values (?, ?, ?)";
-    
-    PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);
-    statementPatito.setString(1, paraUsuario);
-    statementPatito.setString(2, paraPassword);
-    statementPatito.setInt(3, paraNivel);
-       
-    int p = statementPatito.executeUpdate();
-    if (p > 0){
-        JOptionPane.showMessageDialog(null, "El Registro de Usuario fue Guardado");
-        
-    conexionPatito.close();
-    
-    }
-}catch(SQLException e){
-        System.out.println(e.getMessage());
-}
+    private void txtNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNivelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNivelActionPerformed
 
-txtUsuario.setText("");
-txtPassword.setText("");
-NIVELES.clearSelection();
-        
-        
-        
-    }//GEN-LAST:event_btnAgregarActionPerformed
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         try{
@@ -370,92 +503,32 @@ NIVELES.clearSelection();
 
             }else{
                 JOptionPane.showMessageDialog(null,"No exite el Usuario");
-txtId.setText("");                
-txtUsu.setText("");
-txtPas.setText("");
-txtNivel.setText("");                
-txtId.requestFocus();
+                txtId.setText("");
+                txtUsu.setText("");
+                txtPas.setText("");
+                txtNivel.setText("");
+                txtId.requestFocus();
             }
             conexionPatito.close();
 
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
-
     }//GEN-LAST:event_btnConsultarActionPerformed
 
-    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+    private void opcTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcTresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcTresActionPerformed
 
-        
-    int paraNivel=0;
-        if (opc1.isSelected()){
-        paraNivel = 1;
-    }else if(opc2.isSelected()){
-        paraNivel = 2;   
-    }else if(opc3.isSelected()){
-       paraNivel = 3;
-    }
-        try{
-           Conectar conectar = new Conectar();
-           Connection conexionPatito = conectar.conexion();
-           String sql="";
-           sql = "update usuarios SET  usuario=?, password=?, nivel=? WHERE id=?";
-          
-           PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);
-           statementPatito.setString(1, txtUsu.getText());
-           statementPatito.setString(2, txtPas.getText());
-           statementPatito.setInt(3, paraNivel);
-           statementPatito.setString(4, txtId.getText());
-                     
-           int respuesta = statementPatito.executeUpdate();
-           
-           if (respuesta>0){
-               JOptionPane.showMessageDialog(null,"Registro ACTUALIZADO");
-           }else{
-                JOptionPane.showMessageDialog(null,"NO se pudo actualizar el registro");
-           }
-         
-            conexionPatito.close();
-       }catch (SQLException e){
-        System.out.println(e.getMessage());
-        } 
-        
-        txtUsu.setText("");
-        txtPas.setText("");
-        txtNivel.setText("");
-        NIVELES2.clearSelection();
-        
-    }//GEN-LAST:event_btnActualizarActionPerformed
+    private void txtPasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasActionPerformed
 
-    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
-
-    try{
-           Conectar conectar = new Conectar();
-           Connection conexionPatito = conectar.conexion();
-           String sql="";
-           sql = "delete from usuarios where id=?";
-           
-           PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);        
-           statementPatito.setInt(1, Integer.parseInt(txtId.getText()));
-           
-           int opcion = statementPatito.executeUpdate();
-           if (opcion > 0){
-               JOptionPane.showMessageDialog(null,"El registro del usuario SE BORRO de la Base de Datos");
-           }else{
-                JOptionPane.showMessageDialog(null,"Registro NO BORRADO - por favor revise");
-           }       
- 
-           conexionPatito.close();               
-           }catch (SQLException e){
-        System.out.println(e.getMessage());
-        }   
-    }//GEN-LAST:event_btnBorrarActionPerformed
-
-    private void btnRefrescarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefrescarActionPerformed
-
-        coincidencia("");
-
-    }//GEN-LAST:event_btnRefrescarActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        LoginSistemaPatito login = new LoginSistemaPatito();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -505,15 +578,9 @@ txtId.requestFocus();
     private javax.swing.JLabel etiFiltro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton opc1;

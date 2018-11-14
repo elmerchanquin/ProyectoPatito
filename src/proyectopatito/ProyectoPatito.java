@@ -7,7 +7,8 @@ package proyectopatito;
 
 /**
  *
- * @author GUILINTON323
+ * @author Guilliton_López
+ * @version 1.1.
  */
 public class ProyectoPatito {
 
