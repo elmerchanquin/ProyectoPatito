@@ -50,7 +50,6 @@ public class CrearFactura extends javax.swing.JFrame {
         txtCodigoCliente = new javax.swing.JTextField();
         txtCodigoServicio = new javax.swing.JTextField();
         txtMonto = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -64,11 +63,11 @@ public class CrearFactura extends javax.swing.JFrame {
 
         jLabel1.setText("INGRESO DE DATOS PARA LA FACTURA DE LOS CLIENTES");
 
+        txtCodigoCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("NOMBRE CLIENTE"));
+
         txtCodigoServicio.setEditable(false);
 
         txtMonto.setEditable(false);
-
-        jLabel2.setText("CÓDIGO DE CLIENTE");
 
         jLabel3.setText("CÓDIGO DE SERVICIO");
 
@@ -111,24 +110,21 @@ public class CrearFactura extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel3)
-                                                .addComponent(jLabel4))
-                                            .addGap(60, 60, 60))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel5)
-                                            .addGap(48, 48, 48)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(72, 72, 72)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtCodigoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtMonto, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                                        .addComponent(txtCodigoServicio, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                                        .addComponent(jdcFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel3)
+                                                    .addComponent(jLabel4))
+                                                .addGap(60, 60, 60))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel5)
+                                                .addGap(48, 48, 48)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(txtMonto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                                            .addComponent(txtCodigoServicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                                            .addComponent(jdcFecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnConsultar)))
                         .addContainerGap(114, Short.MAX_VALUE))
@@ -145,12 +141,11 @@ public class CrearFactura extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(btnConsultar))
-                .addGap(18, 18, 18)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnConsultar)
+                    .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtCodigoServicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -309,7 +304,6 @@ public class CrearFactura extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
