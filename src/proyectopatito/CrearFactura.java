@@ -46,34 +46,30 @@ public class CrearFactura extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jdcFecha = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
         txtCodigoCliente = new javax.swing.JTextField();
         txtCodigoServicio = new javax.swing.JTextField();
         txtMonto = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         btnGenerar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
-        jdcFecha = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CREACIÓN DE COMPROBANTES DE PAGO PARA CLIENTES PATITO");
 
+        jdcFecha.setBorder(javax.swing.BorderFactory.createTitledBorder("FECHA DE FACTURACIÓN"));
+        jdcFecha.setDateFormatString("dd/MM/yyyy");
+
         jLabel1.setText("INGRESO DE DATOS PARA LA FACTURA DE LOS CLIENTES");
 
-        txtCodigoCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("NOMBRE CLIENTE"));
+        txtCodigoCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("CÓDIGO CLIENTE"));
 
         txtCodigoServicio.setEditable(false);
+        txtCodigoServicio.setBorder(javax.swing.BorderFactory.createTitledBorder("CÓDIGO DE SERVICIO"));
 
         txtMonto.setEditable(false);
-
-        jLabel3.setText("CÓDIGO DE SERVICIO");
-
-        jLabel4.setText("MONTO EN QUETZALES");
-
-        jLabel5.setText("FECHA DE FACTURACIÓN");
+        txtMonto.setBorder(javax.swing.BorderFactory.createTitledBorder("MONTO EN QUETZALES"));
 
         btnGenerar.setText("GENERAR FACTURA");
         btnGenerar.addActionListener(new java.awt.event.ActionListener() {
@@ -96,8 +92,6 @@ public class CrearFactura extends javax.swing.JFrame {
             }
         });
 
-        jdcFecha.setDateFormatString("dd/MM/yyyy");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -109,59 +103,42 @@ public class CrearFactura extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel3)
-                                                    .addComponent(jLabel4))
-                                                .addGap(60, 60, 60))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel5)
-                                                .addGap(48, 48, 48)))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(txtMonto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                                            .addComponent(txtCodigoServicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                                            .addComponent(jdcFecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jdcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtCodigoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                                        .addComponent(txtCodigoServicio)
+                                        .addComponent(txtMonto)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnConsultar)))
-                        .addContainerGap(114, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnGenerar)
-                        .addGap(324, 324, 324))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalir)
-                .addContainerGap())
+                        .addGap(113, 113, 113)
+                        .addComponent(btnSalir)
+                        .addGap(45, 45, 45))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnConsultar)
-                    .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodigoServicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(47, 47, 47)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jdcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(btnGenerar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalir)
-                .addGap(22, 22, 22))
+                    .addComponent(btnConsultar)
+                    .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(txtCodigoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jdcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGenerar)
+                    .addComponent(btnSalir))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,89 +156,84 @@ public class CrearFactura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
-    try {
-        Conectar conectar = new Conectar();
-        Connection conexionPatito = conectar.conexion();
-        
-        String paraCodigoCliente;
-        String paraCodigoServicio;
-        String paraMonto;
-        String paraFecha;
-        String sql;
-        
-        paraCodigoCliente = txtCodigoCliente.getText();
-        paraCodigoServicio = txtCodigoServicio.getText();
-        paraMonto = txtMonto.getText();
-        
-        //La fecha
-        int año = jdcFecha.getCalendar().get(Calendar.YEAR);
-        int mes = jdcFecha.getCalendar().get(Calendar.MONTH);
-        int dia = jdcFecha.getCalendar().get(Calendar.DAY_OF_MONTH);
-        paraFecha = año+"-"+(mes+1)+"-"+dia;
-        
+        try {
+            Conectar conectar = new Conectar();
+            Connection conexionPatito = conectar.conexion();
 
-                
-        sql = "insert into facturacion (codigocliente, codigoservicio, monto, fecha) values (?, ?, ?, ?)";
-        
-        PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);
-        statementPatito.setString(1, paraCodigoCliente);
-        statementPatito.setString(2, paraCodigoServicio);
-        statementPatito.setString(3, paraMonto);
-        statementPatito.setString(4, paraFecha);
-        
-        int p = statementPatito.executeUpdate();
-        if (p > 0){
-            JOptionPane.showMessageDialog(null, "La factura se ha creado en el SISTEMA PATITO");
-       
-        conexionPatito.close();
-            
+            String paraCodigoCliente;
+            String paraCodigoServicio;
+            String paraMonto;
+            String paraFecha;
+            String sql;
+
+            paraCodigoCliente = txtCodigoCliente.getText();
+            paraCodigoServicio = txtCodigoServicio.getText();
+            paraMonto = txtMonto.getText();
+
+            //La fecha
+            int año = jdcFecha.getCalendar().get(Calendar.YEAR);
+            int mes = jdcFecha.getCalendar().get(Calendar.MONTH);
+            int dia = jdcFecha.getCalendar().get(Calendar.DAY_OF_MONTH);
+            paraFecha = año+"-"+(mes+1)+"-"+dia;
+
+            sql = "insert into facturacion (codigocliente, codigoservicio, monto, fecha) values (?, ?, ?, ?)";
+
+            PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);
+            statementPatito.setString(1, paraCodigoCliente);
+            statementPatito.setString(2, paraCodigoServicio);
+            statementPatito.setString(3, paraMonto);
+            statementPatito.setString(4, paraFecha);
+
+            int p = statementPatito.executeUpdate();
+            if (p > 0){
+                JOptionPane.showMessageDialog(null, "La factura se ha creado en el SISTEMA PATITO");
+
+                conexionPatito.close();
+
+            }
+
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+
         }
-        
-    }catch (SQLException e){
-        System.out.println(e.getMessage());
-        
-    }
-    
-    txtCodigoCliente.setText("");
-    txtCodigoServicio.setText("");
-    txtMonto.setText("");
-    jdcFecha.setDateFormatString("");
-    
-    txtCodigoCliente.requestFocus();
 
+        txtCodigoCliente.setText("");
+        txtCodigoServicio.setText("");
+        txtMonto.setText("");
+        jdcFecha.setDateFormatString("");
+
+        txtCodigoCliente.requestFocus();
     }//GEN-LAST:event_btnGenerarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
 
         MenuPrincipalPatito menu = new MenuPrincipalPatito();
-        menu.setVisible(true);        
+        menu.setVisible(true);
         dispose();
-        
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-    try{
-        Conectar conectar = new Conectar();
-        Connection conexionPatito = conectar.conexion();
-        
-        String sql = "";
-        sql = "select * from facturacion where codigocliente=? ";
-        
-        PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);
-        statementPatito.setString(1, txtCodigoCliente.getText());
-        ResultSet resultsetPatito =statementPatito.executeQuery();
-        
-        if (resultsetPatito.next()){
-            txtCodigoServicio.setText(resultsetPatito.getString("codigoservicio"));
-            txtMonto.setText(resultsetPatito.getString("monto"));
-        }else{
-            JOptionPane.showMessageDialog(null, "El Cliente NO existe en el SISTEMA PATITO");
-        }            
-        conexionPatito.close();
-    }catch (SQLException e){
-        System.out.println(e.getMessage());
-    }
+        try{
+            Conectar conectar = new Conectar();
+            Connection conexionPatito = conectar.conexion();
 
+            String sql = "";
+            sql = "select * from facturacion where codigocliente=? ";
+
+            PreparedStatement statementPatito = conexionPatito.prepareStatement(sql);
+            statementPatito.setString(1, txtCodigoCliente.getText());
+            ResultSet resultsetPatito =statementPatito.executeQuery();
+
+            if (resultsetPatito.next()){
+                txtCodigoServicio.setText(resultsetPatito.getString("codigoservicio"));
+                txtMonto.setText(resultsetPatito.getString("monto"));
+            }else{
+                JOptionPane.showMessageDialog(null, "El Cliente NO existe en el SISTEMA PATITO");
+            }
+            conexionPatito.close();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     /**
@@ -304,9 +276,6 @@ public class CrearFactura extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     public com.toedter.calendar.JDateChooser jdcFecha;
     private javax.swing.JTextField txtCodigoCliente;
