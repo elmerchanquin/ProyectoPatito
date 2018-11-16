@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Facturacion" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="064d9672-b2a8-4ab4-8a46-8d5259266b1e">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="101"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="Cliente" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
@@ -34,11 +34,11 @@ WHERE clientes.codigo = $P!{Cliente}]]>
 	<title>
 		<band height="97" splitType="Stretch">
 			<staticText>
-				<reportElement x="143" y="0" width="490" height="47" uuid="a17a6782-10b6-4e32-b562-37aacff06cf9"/>
+				<reportElement x="115" y="0" width="518" height="47" uuid="a17a6782-10b6-4e32-b562-37aacff06cf9"/>
 				<textElement>
 					<font size="26" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Reporte de Facturación Cablenet Patito]]></text>
+				<text><![CDATA[REPORTE DE CLIENTES]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement x="652" y="0" width="100" height="20" uuid="b574cad7-cf80-4a7b-b618-3de3713df3e6"/>
@@ -48,7 +48,7 @@ WHERE clientes.codigo = $P!{Cliente}]]>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement x="0" y="0" width="143" height="77" uuid="ea03cf0f-6ae0-4eba-a662-1ba32e761867"/>
+				<reportElement x="0" y="0" width="115" height="77" uuid="ea03cf0f-6ae0-4eba-a662-1ba32e761867"/>
 				<imageExpression><![CDATA["C:\\Users\\Java2018\\Documents\\NetBeansProjects\\ProyectoPatito\\src\\imagenes\\prueba.png"]]></imageExpression>
 			</image>
 		</band>
@@ -145,7 +145,7 @@ WHERE clientes.codigo = $P!{Cliente}]]>
 		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="292" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<textField>
 				<reportElement x="274" y="0" width="80" height="20" uuid="4e584d4f-413e-47eb-b0d9-decdbf274910"/>
 				<textElement textAlignment="Right"/>
